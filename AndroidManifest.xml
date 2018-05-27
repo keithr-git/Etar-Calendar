@@ -20,8 +20,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ws.xsoh.etar"
     android:installLocation="auto"
-    android:versionCode="14"
-    android:versionName="1.0.12">
+    android:versionCode="15"
+    android:versionName="1.0.13">
 <!--         android:sharedUserLabel="@string/app_label"> -->
 
     <!--
@@ -188,6 +188,16 @@
                 <data android:mimeType="text/calendar" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
 
         <!--<provider android:name="com.android.calendar.CalendarRecentSuggestionsProvider"
             android:exported="false"
